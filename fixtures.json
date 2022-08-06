@@ -9,52 +9,18 @@
                     "py/type": "datetime.datetime"
                 },
                 [
-                    "B+YIBRYAAAAAAA=="
+                    "B+YIBQAAAAAAAA=="
                 ]
             ],
             "py/object": "datetime.datetime"
         },
-        "predictions_dict": {},
+        "predictions_dict": {
+            "filippos": "",
+            "leonidas": "",
+            "zaf": ""
+        },
         "py/object": "fixtures.Fixture",
         "result": "0:2"
-    },
-    {
-        "away_team": "Nottingham Forest",
-        "home_team": "Newcastle United",
-        "id": "NeNo68",
-        "match_datetime": {
-            "__reduce__": [
-                {
-                    "py/type": "datetime.datetime"
-                },
-                [
-                    "B+YIBhAAAAAAAA=="
-                ]
-            ],
-            "py/object": "datetime.datetime"
-        },
-        "predictions_dict": {},
-        "py/object": "fixtures.Fixture",
-        "result": ""
-    },
-    {
-        "away_team": "Southampton",
-        "home_team": "Tottenham",
-        "id": "ToSo68",
-        "match_datetime": {
-            "__reduce__": [
-                {
-                    "py/type": "datetime.datetime"
-                },
-                [
-                    "B+YIBhAAAAAAAA=="
-                ]
-            ],
-            "py/object": "datetime.datetime"
-        },
-        "predictions_dict": {},
-        "py/object": "fixtures.Fixture",
-        "result": ""
     },
     {
         "away_team": "Wolves",
@@ -66,71 +32,18 @@
                     "py/type": "datetime.datetime"
                 },
                 [
-                    "B+YIBhAAAAAAAA=="
+                    "B+YIBgAAAAAAAA=="
                 ]
             ],
             "py/object": "datetime.datetime"
         },
-        "predictions_dict": {},
-        "py/object": "fixtures.Fixture",
-        "result": ""
-    },
-    {
-        "away_team": "Aston Villa",
-        "home_team": "Bournemouth",
-        "id": "BoAs68",
-        "match_datetime": {
-            "__reduce__": [
-                {
-                    "py/type": "datetime.datetime"
-                },
-                [
-                    "B+YIBhAAAAAAAA=="
-                ]
-            ],
-            "py/object": "datetime.datetime"
+        "predictions_dict": {
+            "filippos": "",
+            "leonidas": "",
+            "zaf": "X"
         },
-        "predictions_dict": {},
         "py/object": "fixtures.Fixture",
-        "result": ""
-    },
-    {
-        "away_team": "Chelsea",
-        "home_team": "Everton",
-        "id": "EvCh68",
-        "match_datetime": {
-            "__reduce__": [
-                {
-                    "py/type": "datetime.datetime"
-                },
-                [
-                    "B+YIBhIeAAAAAA=="
-                ]
-            ],
-            "py/object": "datetime.datetime"
-        },
-        "predictions_dict": {},
-        "py/object": "fixtures.Fixture",
-        "result": ""
-    },
-    {
-        "away_team": "Nottingham Forest",
-        "home_team": "Newcastle United",
-        "id": "NeNo68",
-        "match_datetime": {
-            "__reduce__": [
-                {
-                    "py/type": "datetime.datetime"
-                },
-                [
-                    "B+YIBhYAAAAAAA=="
-                ]
-            ],
-            "py/object": "datetime.datetime"
-        },
-        "predictions_dict": {},
-        "py/object": "fixtures.Fixture",
-        "result": "0:0"
+        "result": "2:1"
     },
     {
         "away_team": "Liverpool",
@@ -142,12 +55,16 @@
                     "py/type": "datetime.datetime"
                 },
                 [
-                    "B+YIBhYAAAAAAA=="
+                    "B+YIBgAAAAAAAA=="
                 ]
             ],
             "py/object": "datetime.datetime"
         },
-        "predictions_dict": {},
+        "predictions_dict": {
+            "filippos": "",
+            "leonidas": "",
+            "zaf": "2"
+        },
         "py/object": "fixtures.Fixture",
         "result": "2:2"
     },
@@ -161,52 +78,18 @@
                     "py/type": "datetime.datetime"
                 },
                 [
-                    "B+YIBhYAAAAAAA=="
+                    "B+YIBgAAAAAAAA=="
                 ]
             ],
             "py/object": "datetime.datetime"
         },
-        "predictions_dict": {},
-        "py/object": "fixtures.Fixture",
-        "result": "2:1"
-    },
-    {
-        "away_team": "Southampton",
-        "home_team": "Tottenham",
-        "id": "ToSo68",
-        "match_datetime": {
-            "__reduce__": [
-                {
-                    "py/type": "datetime.datetime"
-                },
-                [
-                    "B+YIBhYAAAAAAA=="
-                ]
-            ],
-            "py/object": "datetime.datetime"
+        "predictions_dict": {
+            "filippos": "",
+            "leonidas": "",
+            "zaf": "2"
         },
-        "predictions_dict": {},
         "py/object": "fixtures.Fixture",
-        "result": "1:1"
-    },
-    {
-        "away_team": "Wolves",
-        "home_team": "Leeds",
-        "id": "LeWo68",
-        "match_datetime": {
-            "__reduce__": [
-                {
-                    "py/type": "datetime.datetime"
-                },
-                [
-                    "B+YIBhYAAAAAAA=="
-                ]
-            ],
-            "py/object": "datetime.datetime"
-        },
-        "predictions_dict": {},
-        "py/object": "fixtures.Fixture",
-        "result": "1:1"
+        "result": "4:1"
     },
     {
         "away_team": "Aston Villa",
@@ -218,14 +101,64 @@
                     "py/type": "datetime.datetime"
                 },
                 [
-                    "B+YIBhYAAAAAAA=="
+                    "B+YIBgAAAAAAAA=="
                 ]
             ],
             "py/object": "datetime.datetime"
         },
-        "predictions_dict": {},
+        "predictions_dict": {
+            "filippos": "",
+            "leonidas": "",
+            "zaf": "1"
+        },
         "py/object": "fixtures.Fixture",
-        "result": "1:0"
+        "result": "2:0"
+    },
+    {
+        "away_team": "Nottingham Forest",
+        "home_team": "Newcastle United",
+        "id": "NeNo68",
+        "match_datetime": {
+            "__reduce__": [
+                {
+                    "py/type": "datetime.datetime"
+                },
+                [
+                    "B+YIBgAAAAAAAA=="
+                ]
+            ],
+            "py/object": "datetime.datetime"
+        },
+        "predictions_dict": {
+            "filippos": "",
+            "leonidas": "",
+            "zaf": "X"
+        },
+        "py/object": "fixtures.Fixture",
+        "result": "2:0"
+    },
+    {
+        "away_team": "Chelsea",
+        "home_team": "Everton",
+        "id": "EvCh68",
+        "match_datetime": {
+            "__reduce__": [
+                {
+                    "py/type": "datetime.datetime"
+                },
+                [
+                    "B+YIBgAAAAAAAA=="
+                ]
+            ],
+            "py/object": "datetime.datetime"
+        },
+        "predictions_dict": {
+            "filippos": "",
+            "leonidas": "",
+            "zaf": "X"
+        },
+        "py/object": "fixtures.Fixture",
+        "result": "0:1"
     },
     {
         "away_team": "Brighton",
@@ -242,7 +175,11 @@
             ],
             "py/object": "datetime.datetime"
         },
-        "predictions_dict": {},
+        "predictions_dict": {
+            "filippos": "",
+            "leonidas": "",
+            "zaf": ""
+        },
         "py/object": "fixtures.Fixture",
         "result": ""
     },
@@ -261,83 +198,11 @@
             ],
             "py/object": "datetime.datetime"
         },
-        "predictions_dict": {},
-        "py/object": "fixtures.Fixture",
-        "result": ""
-    },
-    {
-        "away_team": "Manchester City",
-        "home_team": "West Ham",
-        "id": "WeMa78",
-        "match_datetime": {
-            "__reduce__": [
-                {
-                    "py/type": "datetime.datetime"
-                },
-                [
-                    "B+YIBxEeAAAAAA=="
-                ]
-            ],
-            "py/object": "datetime.datetime"
+        "predictions_dict": {
+            "filippos": "",
+            "leonidas": "",
+            "zaf": ""
         },
-        "predictions_dict": {},
-        "py/object": "fixtures.Fixture",
-        "result": ""
-    },
-    {
-        "away_team": "Everton",
-        "home_team": "Aston Villa",
-        "id": "AsEv138",
-        "match_datetime": {
-            "__reduce__": [
-                {
-                    "py/type": "datetime.datetime"
-                },
-                [
-                    "B+YIDQ0eAAAAAA=="
-                ]
-            ],
-            "py/object": "datetime.datetime"
-        },
-        "predictions_dict": {},
-        "py/object": "fixtures.Fixture",
-        "result": ""
-    },
-    {
-        "away_team": "Bournemouth",
-        "home_team": "Manchester City",
-        "id": "MaBo138",
-        "match_datetime": {
-            "__reduce__": [
-                {
-                    "py/type": "datetime.datetime"
-                },
-                [
-                    "B+YIDRAAAAAAAA=="
-                ]
-            ],
-            "py/object": "datetime.datetime"
-        },
-        "predictions_dict": {},
-        "py/object": "fixtures.Fixture",
-        "result": ""
-    },
-    {
-        "away_team": "Leeds",
-        "home_team": "Southampton",
-        "id": "SoLe138",
-        "match_datetime": {
-            "__reduce__": [
-                {
-                    "py/type": "datetime.datetime"
-                },
-                [
-                    "B+YIDRAAAAAAAA=="
-                ]
-            ],
-            "py/object": "datetime.datetime"
-        },
-        "predictions_dict": {},
         "py/object": "fixtures.Fixture",
         "result": ""
     },
@@ -356,14 +221,18 @@
             ],
             "py/object": "datetime.datetime"
         },
-        "predictions_dict": {},
+        "predictions_dict": {
+            "filippos": "",
+            "leonidas": "",
+            "zaf": ""
+        },
         "py/object": "fixtures.Fixture",
         "result": ""
     },
     {
-        "away_team": "Leicester",
-        "home_team": "Arsenal",
-        "id": "ArLe138",
+        "away_team": "Bournemouth",
+        "home_team": "Manchester City",
+        "id": "MaBo138",
         "match_datetime": {
             "__reduce__": [
                 {
@@ -375,7 +244,34 @@
             ],
             "py/object": "datetime.datetime"
         },
-        "predictions_dict": {},
+        "predictions_dict": {
+            "filippos": "",
+            "leonidas": "",
+            "zaf": ""
+        },
+        "py/object": "fixtures.Fixture",
+        "result": ""
+    },
+    {
+        "away_team": "Leeds",
+        "home_team": "Southampton",
+        "id": "SoLe138",
+        "match_datetime": {
+            "__reduce__": [
+                {
+                    "py/type": "datetime.datetime"
+                },
+                [
+                    "B+YIDRAAAAAAAA=="
+                ]
+            ],
+            "py/object": "datetime.datetime"
+        },
+        "predictions_dict": {
+            "filippos": "",
+            "leonidas": "",
+            "zaf": ""
+        },
         "py/object": "fixtures.Fixture",
         "result": ""
     },
@@ -394,26 +290,34 @@
             ],
             "py/object": "datetime.datetime"
         },
-        "predictions_dict": {},
+        "predictions_dict": {
+            "filippos": "",
+            "leonidas": "",
+            "zaf": ""
+        },
         "py/object": "fixtures.Fixture",
         "result": ""
     },
     {
-        "away_team": "Manchester United",
-        "home_team": "Brentford",
-        "id": "BrMa138",
+        "away_team": "Leicester",
+        "home_team": "Arsenal",
+        "id": "ArLe138",
         "match_datetime": {
             "__reduce__": [
                 {
                     "py/type": "datetime.datetime"
                 },
                 [
-                    "B+YIDRIeAAAAAA=="
+                    "B+YIDRAAAAAAAA=="
                 ]
             ],
             "py/object": "datetime.datetime"
         },
-        "predictions_dict": {},
+        "predictions_dict": {
+            "filippos": "",
+            "leonidas": "",
+            "zaf": ""
+        },
         "py/object": "fixtures.Fixture",
         "result": ""
     },
@@ -432,26 +336,11 @@
             ],
             "py/object": "datetime.datetime"
         },
-        "predictions_dict": {},
-        "py/object": "fixtures.Fixture",
-        "result": ""
-    },
-    {
-        "away_team": "Tottenham",
-        "home_team": "Chelsea",
-        "id": "ChTo148",
-        "match_datetime": {
-            "__reduce__": [
-                {
-                    "py/type": "datetime.datetime"
-                },
-                [
-                    "B+YIDhEeAAAAAA=="
-                ]
-            ],
-            "py/object": "datetime.datetime"
+        "predictions_dict": {
+            "filippos": "",
+            "leonidas": "",
+            "zaf": ""
         },
-        "predictions_dict": {},
         "py/object": "fixtures.Fixture",
         "result": ""
     },
@@ -470,7 +359,11 @@
             ],
             "py/object": "datetime.datetime"
         },
-        "predictions_dict": {},
+        "predictions_dict": {
+            "filippos": "",
+            "leonidas": "",
+            "zaf": ""
+        },
         "py/object": "fixtures.Fixture",
         "result": ""
     },
@@ -489,26 +382,11 @@
             ],
             "py/object": "datetime.datetime"
         },
-        "predictions_dict": {},
-        "py/object": "fixtures.Fixture",
-        "result": ""
-    },
-    {
-        "away_team": "Nottingham Forest",
-        "home_team": "Everton",
-        "id": "EvNo208",
-        "match_datetime": {
-            "__reduce__": [
-                {
-                    "py/type": "datetime.datetime"
-                },
-                [
-                    "B+YIFBAAAAAAAA=="
-                ]
-            ],
-            "py/object": "datetime.datetime"
+        "predictions_dict": {
+            "filippos": "",
+            "leonidas": "",
+            "zaf": ""
         },
-        "predictions_dict": {},
         "py/object": "fixtures.Fixture",
         "result": ""
     },
@@ -527,14 +405,18 @@
             ],
             "py/object": "datetime.datetime"
         },
-        "predictions_dict": {},
+        "predictions_dict": {
+            "filippos": "",
+            "leonidas": "",
+            "zaf": ""
+        },
         "py/object": "fixtures.Fixture",
         "result": ""
     },
     {
-        "away_team": "Aston Villa",
-        "home_team": "Crystal Palace",
-        "id": "CrAs208",
+        "away_team": "Nottingham Forest",
+        "home_team": "Everton",
+        "id": "EvNo208",
         "match_datetime": {
             "__reduce__": [
                 {
@@ -546,7 +428,11 @@
             ],
             "py/object": "datetime.datetime"
         },
-        "predictions_dict": {},
+        "predictions_dict": {
+            "filippos": "",
+            "leonidas": "",
+            "zaf": ""
+        },
         "py/object": "fixtures.Fixture",
         "result": ""
     },
@@ -565,7 +451,34 @@
             ],
             "py/object": "datetime.datetime"
         },
-        "predictions_dict": {},
+        "predictions_dict": {
+            "filippos": "",
+            "leonidas": "",
+            "zaf": ""
+        },
+        "py/object": "fixtures.Fixture",
+        "result": ""
+    },
+    {
+        "away_team": "Aston Villa",
+        "home_team": "Crystal Palace",
+        "id": "CrAs208",
+        "match_datetime": {
+            "__reduce__": [
+                {
+                    "py/type": "datetime.datetime"
+                },
+                [
+                    "B+YIFBAAAAAAAA=="
+                ]
+            ],
+            "py/object": "datetime.datetime"
+        },
+        "predictions_dict": {
+            "filippos": "",
+            "leonidas": "",
+            "zaf": ""
+        },
         "py/object": "fixtures.Fixture",
         "result": ""
     },
@@ -584,7 +497,11 @@
             ],
             "py/object": "datetime.datetime"
         },
-        "predictions_dict": {},
+        "predictions_dict": {
+            "filippos": "",
+            "leonidas": "",
+            "zaf": ""
+        },
         "py/object": "fixtures.Fixture",
         "result": ""
     },
@@ -603,7 +520,11 @@
             ],
             "py/object": "datetime.datetime"
         },
-        "predictions_dict": {},
+        "predictions_dict": {
+            "filippos": "",
+            "leonidas": "",
+            "zaf": ""
+        },
         "py/object": "fixtures.Fixture",
         "result": ""
     },
@@ -622,7 +543,11 @@
             ],
             "py/object": "datetime.datetime"
         },
-        "predictions_dict": {},
+        "predictions_dict": {
+            "filippos": "",
+            "leonidas": "",
+            "zaf": ""
+        },
         "py/object": "fixtures.Fixture",
         "result": ""
     },
@@ -641,7 +566,11 @@
             ],
             "py/object": "datetime.datetime"
         },
-        "predictions_dict": {},
+        "predictions_dict": {
+            "filippos": "",
+            "leonidas": "",
+            "zaf": ""
+        },
         "py/object": "fixtures.Fixture",
         "result": ""
     },
@@ -660,7 +589,11 @@
             ],
             "py/object": "datetime.datetime"
         },
-        "predictions_dict": {},
+        "predictions_dict": {
+            "filippos": "",
+            "leonidas": "",
+            "zaf": ""
+        },
         "py/object": "fixtures.Fixture",
         "result": ""
     },
@@ -679,26 +612,11 @@
             ],
             "py/object": "datetime.datetime"
         },
-        "predictions_dict": {},
-        "py/object": "fixtures.Fixture",
-        "result": ""
-    },
-    {
-        "away_team": "Leeds",
-        "home_team": "Brighton",
-        "id": "BrLe278",
-        "match_datetime": {
-            "__reduce__": [
-                {
-                    "py/type": "datetime.datetime"
-                },
-                [
-                    "B+YIGxAAAAAAAA=="
-                ]
-            ],
-            "py/object": "datetime.datetime"
+        "predictions_dict": {
+            "filippos": "",
+            "leonidas": "",
+            "zaf": ""
         },
-        "predictions_dict": {},
         "py/object": "fixtures.Fixture",
         "result": ""
     },
@@ -717,7 +635,11 @@
             ],
             "py/object": "datetime.datetime"
         },
-        "predictions_dict": {},
+        "predictions_dict": {
+            "filippos": "",
+            "leonidas": "",
+            "zaf": ""
+        },
         "py/object": "fixtures.Fixture",
         "result": ""
     },
@@ -736,26 +658,11 @@
             ],
             "py/object": "datetime.datetime"
         },
-        "predictions_dict": {},
-        "py/object": "fixtures.Fixture",
-        "result": ""
-    },
-    {
-        "away_team": "Everton",
-        "home_team": "Brentford",
-        "id": "BrEv278",
-        "match_datetime": {
-            "__reduce__": [
-                {
-                    "py/type": "datetime.datetime"
-                },
-                [
-                    "B+YIGxAAAAAAAA=="
-                ]
-            ],
-            "py/object": "datetime.datetime"
+        "predictions_dict": {
+            "filippos": "",
+            "leonidas": "",
+            "zaf": ""
         },
-        "predictions_dict": {},
         "py/object": "fixtures.Fixture",
         "result": ""
     },
@@ -774,7 +681,57 @@
             ],
             "py/object": "datetime.datetime"
         },
-        "predictions_dict": {},
+        "predictions_dict": {
+            "filippos": "",
+            "leonidas": "",
+            "zaf": ""
+        },
+        "py/object": "fixtures.Fixture",
+        "result": ""
+    },
+    {
+        "away_team": "Leeds",
+        "home_team": "Brighton",
+        "id": "BrLe278",
+        "match_datetime": {
+            "__reduce__": [
+                {
+                    "py/type": "datetime.datetime"
+                },
+                [
+                    "B+YIGxAAAAAAAA=="
+                ]
+            ],
+            "py/object": "datetime.datetime"
+        },
+        "predictions_dict": {
+            "filippos": "",
+            "leonidas": "",
+            "zaf": ""
+        },
+        "py/object": "fixtures.Fixture",
+        "result": ""
+    },
+    {
+        "away_team": "Everton",
+        "home_team": "Brentford",
+        "id": "BrEv278",
+        "match_datetime": {
+            "__reduce__": [
+                {
+                    "py/type": "datetime.datetime"
+                },
+                [
+                    "B+YIGxAAAAAAAA=="
+                ]
+            ],
+            "py/object": "datetime.datetime"
+        },
+        "predictions_dict": {
+            "filippos": "",
+            "leonidas": "",
+            "zaf": ""
+        },
         "py/object": "fixtures.Fixture",
         "result": ""
     },
@@ -793,7 +750,11 @@
             ],
             "py/object": "datetime.datetime"
         },
-        "predictions_dict": {},
+        "predictions_dict": {
+            "filippos": "",
+            "leonidas": "",
+            "zaf": ""
+        },
         "py/object": "fixtures.Fixture",
         "result": ""
     },
@@ -812,7 +773,11 @@
             ],
             "py/object": "datetime.datetime"
         },
-        "predictions_dict": {},
+        "predictions_dict": {
+            "filippos": "",
+            "leonidas": "",
+            "zaf": ""
+        },
         "py/object": "fixtures.Fixture",
         "result": ""
     },
@@ -831,7 +796,11 @@
             ],
             "py/object": "datetime.datetime"
         },
-        "predictions_dict": {},
+        "predictions_dict": {
+            "filippos": "",
+            "leonidas": "",
+            "zaf": ""
+        },
         "py/object": "fixtures.Fixture",
         "result": ""
     },
@@ -850,7 +819,103 @@
             ],
             "py/object": "datetime.datetime"
         },
-        "predictions_dict": {},
+        "predictions_dict": {
+            "filippos": "",
+            "leonidas": "",
+            "zaf": ""
+        },
+        "py/object": "fixtures.Fixture",
+        "result": ""
+    },
+    {
+        "away_team": "Manchester City",
+        "home_team": "West Ham",
+        "id": "WeMa78",
+        "match_datetime": {
+            "__reduce__": [
+                {
+                    "py/type": "datetime.datetime"
+                },
+                [
+                    "B+YIBxEeAAAAAA=="
+                ]
+            ],
+            "py/object": "datetime.datetime"
+        },
+        "predictions_dict": {
+            "filippos": "",
+            "leonidas": "",
+            "zaf": "1"
+        },
+        "py/object": "fixtures.Fixture",
+        "result": ""
+    },
+    {
+        "away_team": "Manchester United",
+        "home_team": "Brentford",
+        "id": "BrMa138",
+        "match_datetime": {
+            "__reduce__": [
+                {
+                    "py/type": "datetime.datetime"
+                },
+                [
+                    "B+YIDRIeAAAAAA=="
+                ]
+            ],
+            "py/object": "datetime.datetime"
+        },
+        "predictions_dict": {
+            "filippos": "",
+            "leonidas": "",
+            "zaf": "2"
+        },
+        "py/object": "fixtures.Fixture",
+        "result": ""
+    },
+    {
+        "away_team": "Everton",
+        "home_team": "Aston Villa",
+        "id": "AsEv138",
+        "match_datetime": {
+            "__reduce__": [
+                {
+                    "py/type": "datetime.datetime"
+                },
+                [
+                    "B+YIDQ0eAAAAAA=="
+                ]
+            ],
+            "py/object": "datetime.datetime"
+        },
+        "predictions_dict": {
+            "filippos": "",
+            "leonidas": "",
+            "zaf": "X"
+        },
+        "py/object": "fixtures.Fixture",
+        "result": ""
+    },
+    {
+        "away_team": "Tottenham",
+        "home_team": "Chelsea",
+        "id": "ChTo148",
+        "match_datetime": {
+            "__reduce__": [
+                {
+                    "py/type": "datetime.datetime"
+                },
+                [
+                    "B+YIDhEeAAAAAA=="
+                ]
+            ],
+            "py/object": "datetime.datetime"
+        },
+        "predictions_dict": {
+            "filippos": "",
+            "leonidas": "",
+            "zaf": "2"
+        },
         "py/object": "fixtures.Fixture",
         "result": ""
     }

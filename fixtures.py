@@ -8,13 +8,15 @@ import bs4
 import lxml
 import ujson
 
+import json_readers
+
 
 class Fixture():
     def __init__(self, fixture_string: str):
         self.home_team: str = ""
         self.away_team: str = ""
         self.match_datetime: datetime.datetime = None
-        self.predictions_dict = {}
+        self.predictions_dict = { x:"" for x in json_readers.get_player_data_and_player_tables()[0]}
         self.result = ""
         self.id: str = ""
         self.parse_fixture_string(fixture_string)
@@ -22,7 +24,7 @@ class Fixture():
     def __eq__(self, other) -> bool:
         if type(other) == Fixture.__class__:
             return False
-        if self.id == other.id and self.match_datetime == self.match_datetime:
+        if self.id == other.id:
             return True
         else:
             return False
@@ -38,14 +40,17 @@ class Fixture():
             # If live instead of datetime of match, there is a "X'" string where X is int
             if "'" in tokens[4]: # Live
                 now = datetime.datetime.today()
-                self.match_datetime = datetime.datetime(now.year, now.month, now.day, 22, 0)
+                self.match_datetime = datetime.datetime(now.year, now.month, now.day, 0, 0)
             else: # Finished
                 if "Today" in tokens[4]:
                     now = datetime.datetime.today()
-                    self.match_datetime = datetime.datetime(now.year, now.month, now.day, 22, 0)
+                    self.match_datetime = datetime.datetime(now.year, now.month, now.day, 0, 0)
                 elif "Yesterday" in tokens[4]:
                     now = datetime.datetime.today() - datetime.timedelta(days=1)
-                    self.match_datetime = datetime.datetime(now.year, now.month, now.day, 22, 0)
+                    self.match_datetime = datetime.datetime(now.year, now.month, now.day, 0, 0)
+                elif "Half time" in tokens[4]:
+                    now = datetime.datetime.today() - datetime.timedelta(days=1)
+                    self.match_datetime = datetime.datetime(now.year, now.month, now.day, 0, 0)
                 else:
                     self.match_datetime = datetime.datetime.strptime(tokens[4], "%d/%m/%Y")
             self.id = self.home_team[:2] + self.away_team[:2] + str(self.match_datetime.day) + str(self.match_datetime.month)
@@ -69,6 +74,9 @@ class Fixture():
                 self.match_datetime = datetime.datetime.strptime(tokens[2] + tokens[3], "%d/%m/%Y%H:%M")
         self.id = self.home_team[:2] + self.away_team[:2] + str(self.match_datetime.day) + str(self.match_datetime.month)
 
+    def get_bet_string(self, user_id: int) -> str:
+        user_name = json_readers.get_player_name_by_id(user_id)
+        return f"{self.home_team} vs {self.away_team} {self.predictions_dict[user_name]} for {user_name}"
     def __repr__(self) -> str:
         return f"Home: {self.home_team}, Away: {self.away_team}," \
                + f" Date: {self.match_datetime.strftime('%d.%m.%Y %H:%M')}, Result: {self.result}, Id: {self.id}"
@@ -89,6 +97,9 @@ def get_fixtures() -> List[Fixture]:
     new_fixtures = [x.text.strip() for x in new_fixtures]
     new_fixtures = [Fixture(x) for x in new_fixtures]
     old_fixtures = load_fixtures()
+    for old_fix in old_fixtures:
+        if old_fix in new_fixtures:
+            new_fixtures.remove(old_fix)
     fixtures = list(set(new_fixtures + old_fixtures))
     fixtures.sort(key=sort_key)
     return fixtures

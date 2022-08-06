@@ -10,7 +10,7 @@ class Player:
     Provides methods for calculating score, max_diff_element, perfect_guess_element
     """
 
-    def __init__(self, name: str, player_table: List[str], num_changes: int, tabledata: List[str], previous_score: int):
+    def __init__(self, name: str, player_table: List[str], num_changes: int, tabledata: List[str], previous_score: int, user_id: int):
         self.name: str = name
         self.player_table: List[str] = player_table
         self.num_changes: int = num_changes
@@ -22,7 +22,7 @@ class Player:
         self.max_diff: int = 0
         self.calculate_score()
         self.score_difference = self.score - previous_score
-
+        self.user_id = user_id
     def calculate_score(self) -> None:
         """
         Calculate player score according to differences of player_table and tabledata.
@@ -66,6 +66,6 @@ def create_player_objects(player_data_dict: dict, player_tables_dict: dict) -> L
     for new_player in player_tables_dict.keys():
         players_list.append(
             Player(new_player, player_tables_dict[new_player], player_data_dict[new_player]["changes"],
-                   web_scrapping.web_scrape_table(), player_data_dict[new_player]["score"]))
+                   web_scrapping.web_scrape_table(), player_data_dict[new_player]["score"], player_data_dict[new_player]["user_id"]))
     return players_list
 

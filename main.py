@@ -16,7 +16,9 @@ import telegram_messaging
 
 BOT_TOKEN = json_readers.get_key("BOT_TOKEN")
 
+
 def handle_message(update: telegram.Update, context: ext.CallbackContext):
+    """Redirects received message with passed arguments to telegram_messaging to handle it according to text."""
     telegram_messaging.handle_received_message(update, context)
 
 
