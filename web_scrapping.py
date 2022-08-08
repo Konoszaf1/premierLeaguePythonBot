@@ -4,6 +4,7 @@ from requests_html import HTMLSession
 
 PREMIER_LEAGUE_TABLE_URL = 'https://www.skysports.com/premier-league-table'
 
+
 def web_scrape_table() -> List[str]:
     """Scrapes the web using requests_html for the premier league table and returns the name column as is. """
     request = HTMLSession().get(PREMIER_LEAGUE_TABLE_URL)
