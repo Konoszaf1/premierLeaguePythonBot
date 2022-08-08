@@ -17,7 +17,7 @@ def handle_received_message(update: telegram.Update, context: ext.CallbackContex
     if received_text.lower() == "start":  # Start Bot Session send menu including "Fixtures" and "Score"
         update.message.reply_text(text="Starting Bot...", reply_markup=get_inline_keyboard())
         bot.delete_message(chat_id=update.effective_chat.id, message_id=update.message.message_id)
-    elif received_text.lower() == "exit":  # Exit Bot Session send menu including "Fixtures" and "Score"
+    elif "exit" in received_text.lower():  # Exit Bot Session send menu including "Fixtures" and "Score"
         previous_message = update.message.reply_to_message
         message_to_be_deleted = update.message.reply_text(text="Dummy reply message to end session",
                                                           reply_markup=telegram.ReplyKeyboardRemove(selective=True))
@@ -63,7 +63,6 @@ def handle_received_message(update: telegram.Update, context: ext.CallbackContex
             if 'x' not in received_text.lower() and '\n' not in received_text.lower():
                 bet_fixture = \
                     [x for x in temp_fixtures_list if x.home_team == received_text or x.away_team == received_text][0]
-                print(bet_fixture.predictions_dict[player_string])
                 if bet_fixture.predictions_dict[player_string] == "":
                     bet_fixture.predictions_dict[player_string] = '1' if received_text in [x.home_team for x in
                                                                                            temp_fixtures_list] else '2'
