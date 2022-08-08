@@ -1,4 +1,4 @@
-import datetime
+from datetime import datetime, timedelta
 import json
 import pprint
 from typing import List
@@ -29,49 +29,39 @@ class Fixture():
         else:
             return False
 
-    def parse_fixture_string(self, string: str) -> None:
+    def parse_fixture_string(self, string) -> None:
         tokens = string.split("  ")
         tokens = [x.strip() for x in tokens]
-        self.home_team = tokens[0]
-        # If match is live or finished, tokens[1] and tokens [3] are the score.
-        if tokens[1].isnumeric():
-            self.result = tokens[1] + ":" + tokens[3]
-            self.away_team = tokens[2]
-            # If live instead of datetime of match, there is a "X'" string where X is int
-            if "'" in tokens[4]: # Live
-                now = datetime.datetime.today()
-                self.match_datetime = datetime.datetime(now.year, now.month, now.day, 0, 0)
-            else: # Finished
-                if "Today" in tokens[4]:
-                    now = datetime.datetime.today()
-                    self.match_datetime = datetime.datetime(now.year, now.month, now.day, 0, 0)
-                elif "Yesterday" in tokens[4]:
-                    now = datetime.datetime.today() - datetime.timedelta(days=1)
-                    self.match_datetime = datetime.datetime(now.year, now.month, now.day, 0, 0)
-                elif "Half time" in tokens[4]:
-                    now = datetime.datetime.today() - datetime.timedelta(days=1)
-                    self.match_datetime = datetime.datetime(now.year, now.month, now.day, 0, 0)
-                else:
-                    self.match_datetime = datetime.datetime.strptime(tokens[4], "%d/%m/%Y")
-            self.id = self.home_team[:2] + self.away_team[:2] + str(self.match_datetime.day) + str(self.match_datetime.month)
-            return
-        self.away_team = tokens[1]
-        if len(tokens) == 3: # fixture is today
-            now = datetime.datetime.today()
-            if not tokens[2] == "Postponed":
-                self.match_datetime = now.strftime("%d/%m/%Y") + ' ' + tokens[2]  # to str
-                self.match_datetime = datetime.datetime.strptime(self.match_datetime, "%d/%m/%Y %H:%M")  # to datetime
-            else:
-                self.match_datetime = datetime.datetime(1, 1, 1)
-        elif len(tokens) == 4: # fixture is tomorrow or in the future
-            if tokens[2] == "Tomorrow": # tomorrow
-                now = datetime.datetime.today()
-                tomorrow = datetime.datetime.today() + datetime.timedelta(days=1)
-                self.match_datetime = tomorrow.strftime("%d/%m/%Y") + ' ' + tokens[3]  # to str
-                self.match_datetime = datetime.datetime.strptime(self.match_datetime, "%d/%m/%Y %H:%M")  # to datetime
-            else:
-                # TODO: check if zeropadded dates work correctly.
-                self.match_datetime = datetime.datetime.strptime(tokens[2] + tokens[3], "%d/%m/%Y%H:%M")
+        for index, token in enumerate(tokens):
+            if index == 0:  # First token is always home team
+                self.home_team = token
+            elif index == 1 and token.isnumeric(): # Second token can be either home team goals
+                self.result = f"{token}:{tokens[3]}"  # in this case 4th token is away team goals
+                self.away_team = tokens[2]  # and 3rd token is away team
+            elif index == 1 and not token.isnumeric():  # or away team
+                self.away_team = token
+            elif index == 2 and ":" in token:  # 3rd token is XX:XX and match is today
+                now = datetime.today()
+                self.match_datetime = now.strftime("%d/%m/%Y") + token.strip()  # to str
+                self.match_datetime = datetime.strptime(self.match_datetime, "%d/%m/%Y%H:%M")
+            elif index == 2 and "Postponed" in token:  # Match is postponed
+                self.match_datetime = datetime(1, 1, 1)
+            elif index == 2 and "/" in token:  # Token is a datetime
+                self.match_datetime = datetime.strptime(token.strip() + " " + tokens[3].strip(), "%d/%m/%Y %H:%M")
+            elif index == 2 and "Tomorrow" in token:  # Token says "Tomorrow" instead of a datetime
+                now = datetime.today() + timedelta(days=1)
+                self.match_datetime = now.strftime("%d/%m/%Y") + tokens[3].strip()  # to str
+                self.match_datetime = datetime.strptime(self.match_datetime, "%d/%m/%Y%H:%M")
+            elif index == 4 and ("'" in token or "Half time" in token or "Today" in token):  # Match is live
+                now = datetime.today()
+                self.match_datetime = now.strftime("%d/%m/%Y")
+                self.match_datetime = datetime.strptime(self.match_datetime, "%d/%m/%Y")
+            elif index == 4 and "/" in token:  # Token is a datetime
+                self.match_datetime = datetime.strptime(token, "%d/%m/%Y")
+            elif index == 4 and "Yesterday" in token:  # Match finished yesterday
+                now = datetime.today() + timedelta(days=1)
+                self.match_datetime = now.strftime("%d/%m/%Y")
+                self.match_datetime = datetime.strptime(self.match_datetime, "%d/%m/%Y")
         self.id = self.home_team[:2] + self.away_team[:2] + str(self.match_datetime.day) + str(self.match_datetime.month)
 
     def get_bet_string(self, user_id: int) -> str:

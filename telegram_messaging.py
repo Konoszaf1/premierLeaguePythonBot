@@ -36,17 +36,19 @@ def handle_received_message(update: telegram.Update, context: ext.CallbackContex
                                                                                 date_to_filter=datetime.today()))
         bot.delete_message(chat_id=update.effective_chat.id, message_id=update.message.message_id)
         fixtures.write_fixtures(fixtures_list)
-    elif received_text.lower() == "tomorrow":
+    elif received_text.lower() == "next day":
         fixtures_list = fixtures.load_fixtures()
         previous_message = update.message.reply_to_message
         previous_date = datetime.strptime(previous_message.text[previous_message.text.rindex(" "):].strip(), '%d.%m.%Y')
         next_date = previous_date+timedelta(days=1)
         update.message.reply_text(text=f"Fixtures for {next_date.strftime('%d.%m.%Y')}",reply_markup=generate_fixture_keyboard_markup(fixtures_list, update,next_date ))
         bot.delete_message(chat_id=update.effective_chat.id, message_id=update.message.message_id)
+        bot.delete_message(chat_id=previous_message.chat_id,message_id = previous_message.message_id)
     else:
         fixtures_list = fixtures.load_fixtures()
         betted_fixture = None
         previous_date = datetime.today()
+        previous_message = None
         if "for" in received_text:
             previous_message = update.message.reply_to_message
             previous_date = datetime.strptime(previous_message.text[previous_message.text.rindex(" "):].strip(), '%d.%m.%Y')
@@ -69,6 +71,8 @@ def handle_received_message(update: telegram.Update, context: ext.CallbackContex
             fixtures.write_fixtures(fixtures_list)
         update.message.reply_text(text=f"Fixtures for {previous_date.strftime('%d.%m.%Y')}", reply_markup=generate_fixture_keyboard_markup(fixtures_list, update, previous_date))
         bot.delete_message(chat_id=update.effective_chat.id, message_id=update.message.message_id)
+        if previous_message is not None:
+            bot.delete_message(chat_id=previous_message.chat_id, message_id = previous_message.message_id)
 def parse_filter(message: str) -> datetime:
     if "today" in message or "when" not in message:
         return datetime.today()
@@ -140,6 +144,6 @@ def generate_fixture_keyboard_markup(fixtures_list: List[fixtures.Fixture], upda
              KeyboardButton(f"X⚽️\n{fixture.id}") if fixture.predictions_dict[username] == 'X' else KeyboardButton(f"X\n{fixture.id}"),
              KeyboardButton(f"{fixture.away_team}⚽️") if fixture.predictions_dict[username] == '2' else KeyboardButton(fixture.away_team)])
     keyboard.insert(0, [KeyboardButton(f"Exit matches of {date_to_filter.strftime('%d.%m.%Y')}")])
-    keyboard.append([KeyboardButton("Tomorrow")])
+    keyboard.append([KeyboardButton("Next day")])
     reply_markup = telegram.ReplyKeyboardMarkup(keyboard, resize_keyboard=True, one_time_keyboard=False, selective=True)
     return reply_markup
