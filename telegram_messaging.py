@@ -87,9 +87,9 @@ def select_fixtures(fixtures_list, filter_datetime: datetime) -> List[fixtures.F
         """True if fixture is on the same day, else false."""
         if filter_datetime.day == test.match_datetime.day \
                 and filter_datetime.month == test.match_datetime.month \
-                and filter_datetime.year == test.match_datetime.year \
-                and filter_datetime.hour < test.match_datetime.hour \
-                and filter_datetime.minute < test.match_datetime.minute:
+                and filter_datetime.year == test.match_datetime.year:
+                #and filter_datetime.hour < test.match_datetime.hour \
+                #and filter_datetime.minute < test.match_datetime.minute:
             return True
         return False
 

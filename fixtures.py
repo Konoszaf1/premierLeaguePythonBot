@@ -3,7 +3,7 @@ from typing import List
 import jsonpickle
 import requests
 import bs4
-from ujson import JSONDecodeError
+from json import JSONDecodeError
 from datetime import datetime, timedelta
 import json_readers
 

@@ -8,6 +8,8 @@ Telegram API.
 """
 import datetime
 import logging
+import time
+import socket
 
 import pytz
 import telegram
@@ -29,7 +31,17 @@ def send_score_job(context: telegram.ext.CallbackContext):
     telegram_messaging.telegram_bot_send_score(context.bot, chat_id=GROUP_CHAT_ID)
 
 
-if __name__ == "__main__":
+def is_connected_to_internet(host="8.8.8.8", port=53, timeout=3) -> bool:
+    """Checks for internet connection and returns true if it's established."""
+    try:
+        socket.setdefaulttimeout(timeout)
+        socket.socket(socket.AF_INET, socket.SOCK_STREAM).connect((host, port))
+        return True
+    except socket.error as ex:
+        return False
+
+
+def main():
     logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
     # Setup and run bot
     updater = ext.Updater(token=BOT_TOKEN, use_context=True)
@@ -43,3 +55,19 @@ if __name__ == "__main__":
     logging.info("Listening...")
     updater.start_polling()
     updater.idle()
+
+
+def start_bot():
+    try:
+        main()
+    except (telegram.error.NetworkError, ConnectionError):
+        while not is_connected_to_internet():
+            pass
+        start_bot()
+
+
+if __name__ == "__main__":
+    start_bot()
+
+
+
